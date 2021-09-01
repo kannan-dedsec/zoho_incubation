@@ -145,7 +145,7 @@ void SignIn(struct MyProfile *prof,struct MyProfile *head) //sign in page (this 
 		do{                      //part 2 print the features that are available for the user
 			system("CLS");
 			printf("ZOHO REGISTER \n"); 	                                       
-			printf("\n\n\t HI %s !!! \n\n\t 1. My Profile \n\t 2. exit \n\t 3. SignIn \n\t 4. SignUp \n\t 5. Search \n\t",temp2->name);
+			printf("\n\n\t HI %s !!! \n\n\t 1. My Profile \n\t 2. exit \n\t 3. SignIn \n\t 4. SignUp \n\t 5. Search \n\t 6. Edit Profile \n\t",temp2->name);
 			scanf("%d",&operation);
 		
 			switch(operation)
@@ -170,7 +170,12 @@ void SignIn(struct MyProfile *prof,struct MyProfile *head) //sign in page (this 
 				case 5:
 					search(head);
 					loop = 1;
-					break;			
+					break;
+				case 6:
+					if(securityCheck(temp2))
+					editProfile(temp2);
+					loop=1;
+					break;				
 				default:
 					printf("\nYou Have Entered the wrong number, try again :)\n\n");
 					loop = 1;
@@ -360,6 +365,84 @@ int search(struct MyProfile* head)   // search option
 	printf("\n\t\tPress any key to continue ...");
 	getch();
 	return 1;
+}
+
+int editProfile(struct MyProfile* prof) //to edit your pofile details
+{
+	int operation;
+	char string[20];
+	char dec = 'n';
+	do
+	{	
+		system("CLS");
+		printf("ZOHO REGISTER \n");
+		printf(" \n\tEdit Your Profile \n");
+		printf("\n\t\t 1. Name : %s",prof->name);
+		printf("\n\t\t 2. Username : %s",prof->Username);
+		printf("\n\t\t 3. Password : ********",prof->Password);
+		printf("\n\t\t 4. Email : %s",prof->email);
+		printf("\n\t\t 5. Number : %s",prof->number);
+		printf("\n\t\t 6. Go Back\n\n");
+		scanf("%d",&operation);
+		system("CLS");
+		printf("ZOHO REGISTER \n");
+		switch(operation)
+		{
+			case 1:
+				printf("\n\t Enter the new name : ");
+				scanf("%s",string);
+				strcpy(prof->name,string);
+				break;
+			case 2:
+				printf("\n\t Enter the new username : ");
+				scanf("%s",string);
+				strcpy(prof->Username,string);
+				break;
+			case 3:
+				printf("\n\t Enter the new Password : ");
+				scanf("%s",string);
+				strcpy(prof->Password,string);
+				break;
+			case 4:
+				printf("\n\t Enter the new email : ");
+				scanf("%s",string);
+				strcpy(prof->email,string);
+				break;
+			case 5:
+				printf("\n\t Enter the new Number : ");
+				scanf("%s",string);
+				strcpy(prof->number,string);
+				break;
+			case 6:
+				return 1;
+				break;					
+			default:
+				printf("\n\n\t\t you have entered the wrong number\n");
+		}
+		printf("\n\t\tdo you want to continue?(y/n) : ");
+		scanf(" %c",&dec);
+	}while(dec=='y'||dec=='Y');
+	return 0;
+}
+
+int securityCheck(struct MyProfile* prof) // security check from the user (eg.password)
+{
+	char string[20];
+	
+	system("CLS");
+	printf("ZOHO REGISTER \n");
+	printf("\n\t Security Check to Confirm this is you ");
+	printf("\n\n\t Enter you Password : ");
+	scanf("%s",&string);
+	if(strcmp(prof->Password,string) == 0)
+	return 1;
+	else
+	{
+		printf("\n\n \t Wrong password ...press any key ");
+		getch();
+		return 0;
+	}
+	
 }
 
 int main(int argc, char *argv[])     //homepage

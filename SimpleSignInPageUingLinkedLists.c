@@ -329,6 +329,7 @@ int partialStringSearch(char username1[],char username2[] )  //partial string se
 			}
 		}
 	}
+	return 0;	
 }
 int search(struct MyProfile* head)   // search option
 {
@@ -348,7 +349,7 @@ int search(struct MyProfile* head)   // search option
 		if(partialStringSearch(temp6->Username,string))  //searching username if exisit from the linked struct 
 		{
 
-			printf("\n \t %s \n",temp6->Username);
+			printf("\n \t\t %s \n",temp6->Username);
 			m++;
 		}
 		temp6= temp6->next;

@@ -1,0 +1,14 @@
+
+userid = 0 
+ name = kannan 
+ username : dedsec 
+ password : 123 
+ email : dedsec 
+ number : 123 
+
+userid = 1 
+ name = 1 
+ username : 1 
+ password : 1 
+ email : 1 
+ number : 1 

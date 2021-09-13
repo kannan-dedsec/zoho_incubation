@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1631509404 source:c:\users\kannan\documents\zoho_register\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<mysql.h>
+	<conio.h>
+

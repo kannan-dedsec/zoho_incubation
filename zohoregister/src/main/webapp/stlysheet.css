@@ -1,0 +1,46 @@
+body{
+    background-color:antiquewhite;
+    
+}
+
+.center_it{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.signup-ex{
+    margin-top: 18% !important;
+}
+.sign-in {
+    margin-top: 10%;
+    position: absolute;
+    margin-left: 45%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #3AA6C7;
+    -webkit-box-shadow: inset 1px 1px 20px 0 #FFFFFF;
+    -moz-box-shadow: inset 1px 1px 20px 0 #FFFFFF;
+    box-shadow: inset 1px 1px 20px 0 #FFFFFF;
+    text-shadow: 9px 1px 20px #000000;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .sign-in:hover {
+    background: #1E62D0;
+    border: solid #337FED 1px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+ }
